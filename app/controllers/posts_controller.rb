@@ -1,5 +1,5 @@
+# frozen_string_literal: true
 class PostsController < ApplicationController
-
   before_action :find_post, only: [:show, :edit, :destroy, :update]
 
   def index
