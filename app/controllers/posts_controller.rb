@@ -25,12 +25,12 @@ class PostsController < ApplicationController
 
   def update
     @post.assign_attributes(post_params)
-    @post.save
+    @post.save!
     redirect_to post_path(@post)
   end
 
   def destroy
-    @post.destroy
+    @post.destroy!
     redirect_to posts_path
   end
 
