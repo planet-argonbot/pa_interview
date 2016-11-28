@@ -14,6 +14,7 @@ gem 'argon-rubocop', github: 'planetargon/argon-rubocop', require: false
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
 end
 
 group :development do
