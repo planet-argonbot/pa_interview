@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:create, :destroy]
 
   def index
     @users = User.all
@@ -36,6 +37,11 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def check_admin
+    # Use admin string maybe
+    redirect_to :unauthorized if current_user.role != ROLES[0]
+  end
 
   def find_user
     @user = User.find(params[:id])
