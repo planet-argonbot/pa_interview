@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/planetargon/argon-rubocop.git
-  revision: 064fb1b55a7123002cdefdc987f61336cea3115d
-  specs:
-    argon-rubocop (0.0.2)
-      rubocop (~> 0.41.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,7 +39,10 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    ast (2.3.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     builder (3.2.2)
     byebug (9.0.6)
     coffee-rails (4.2.1)
@@ -57,6 +53,7 @@ GEM
       execjs
     coffee-script-source (1.11.1)
     concurrent-ruby (1.0.2)
+    connection_pool (2.2.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -89,10 +86,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-    parser (2.3.3.0)
-      ast (~> 2.2)
     pg (0.19.0)
-    powerpack (0.1.1)
     puma (3.6.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -120,11 +114,16 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rainbow (2.1.0)
     rake (11.3.0)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    react-rails (2.4.4)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -142,13 +141,6 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
-    rubocop (0.41.2)
-      parser (>= 2.3.1.1, < 3.0)
-      powerpack (~> 0.1)
-      rainbow (>= 1.99.1, < 3.0)
-      ruby-progressbar (~> 1.7)
-      unicode-display_width (~> 1.0, >= 1.0.1)
-    ruby-progressbar (1.8.1)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -171,14 +163,10 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    turbolinks (5.0.1)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.1.1)
     web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -192,7 +180,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  argon-rubocop!
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
@@ -201,14 +188,14 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  react-rails (~> 2.4, >= 2.4.4)
   rspec-rails (~> 3.5, >= 3.5.2)
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console
 
 BUNDLED WITH
-   1.12.5
+   1.14.6
