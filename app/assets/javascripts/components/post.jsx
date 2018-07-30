@@ -4,14 +4,14 @@ class Post extends React.Component {
 
     this.state = {
       post: this.props.post,
-      reports: [{id: 1, views: 100, clicks: 50}],
+      reports: [{id: 1, revenue: 100, totalPurchases: 50}],
 
     }
-    this.saveReport = this.saveReport.bind(this);
+    this.fetchReport = this.fetchReport.bind(this);
     this.updateReports = this.updateReports.bind(this);
   }
 
-  saveReport() {
+  fetchReport() {
     $.ajax({
       url: '/reports',
       dataType: 'json',
@@ -39,7 +39,7 @@ class Post extends React.Component {
           ))}
         </div>
         <div>
-          <a href="#" onClick={this.saveReport}>Save</a>
+          <a href="#" onClick={this.fetchReport}>Fetch Report</a>
         </div>
       </div>
 

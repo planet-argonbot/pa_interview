@@ -6,8 +6,8 @@ class Report extends React.Component {
   render() {
     return(
       <div>
-        <p>Views: {this.props.report.views}</p>
-        <p>Clicks: {this.props.report.clicks}</p>
+        <p>Revenue: {this.props.report.revenue}</p>
+        <p>Total Purchases: {this.props.report.totalPurchases}</p>
       </div>
     )
   }
