@@ -3,46 +3,50 @@ class Post extends React.Component {
     super(props);
 
     this.state = {
-      post: this.props.post,
-      reports: [{id: 1, revenue: 100, totalPurchases: 50}],
-
+      title: this.props.title || '',
+      content: this.props.content|| ''
     }
-    this.fetchReport = this.fetchReport.bind(this);
-    this.updateReports = this.updateReports.bind(this);
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.createdPost = this.createdPost.bind(this);
   }
 
-  fetchReport() {
+  handleSubmit() {
     $.ajax({
-      url: '/reports',
+      url: '/posts',
       dataType: 'json',
       type: 'POST',
-      data: { reports: { post_id: this.state.post.id } },
-      success: (data) => {  this.updateReports(data.report) },
+      data: this.state,
+      success: (data) => {  this.createdPost(data) },
       error: (data) => {  }
     });
   }
 
-  updateReports(report) {
-    reports = this.state.reports.concat(report);
-    this.setState({reports: reports});
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  createdPost(data) {
   }
 
   render() {
     return(
-      <div>
-        <h1>
-          {this.state.post.title}
-        </h1>
-        <div>
-          {this.state.reports.map(report => (
-            <Report report={ report } key={report.id}/>
-          ))}
-        </div>
-        <div>
-          <a href="#" onClick={this.fetchReport}>Fetch Report</a>
-        </div>
-      </div>
-
+      <form onSubmit={this.handleSubmit}>
+        <p>
+          <label>
+            Title:
+            <input type="text" value={this.state.title} onChange={this.handleChange} name="title" />
+          </label>
+        </p>
+        <p>
+          <label>
+            Content:
+            <input type="text" value={this.state.content} onChange={this.handleChange} name="content" />
+          </label>
+        </p>
+        <input type="submit" value="Submit" />
+      </form>
     );
   }
 }
