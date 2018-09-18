@@ -18,7 +18,7 @@ class Post extends React.Component {
       dataType: 'json',
       type: 'POST',
       data: this.state,
-      success: (data) => {  this.createdPost(data) },
+      complete: () => {  this.createdPost() },
       error: (data) => {  }
     });
   }
@@ -27,7 +27,10 @@ class Post extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  createdPost(data) {
+  createdPost() {
+    window.location.replace(
+      "/posts"
+    )
   }
 
   render() {
@@ -50,4 +53,3 @@ class Post extends React.Component {
     );
   }
 }
-
