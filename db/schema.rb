@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20180919194906) do
     t.datetime "updated_at", null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "username"
   end
 
 end
