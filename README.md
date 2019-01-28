@@ -1,24 +1,22 @@
-# README
+# Application Details:
+Rails: 5.2.2
+Ruby: 2.6.0
+Database: Postgresql
+Background processor: Sidekiq via Redis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To start application use foreman: `foreman start -f Procfile.dev`
 
-Things you may want to cover:
+Planet Argon coding exercise overview:
 
-* Ruby version
+  As a user, I want to be able to fetch todos from an external API.
 
-* System dependencies
+  my todos are currently stored at https://jsonplaceholder.typicode.com/todos?usertId={my_user_id} but I want them
+  stored on this application's database so I can better track them.
 
-* Configuration
+  On my #show view I want to be able to click a button that fetches a todo.
 
-* Database creation
+  After a request is made, I should not be able to submit another request until the first request is complete.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  I would like to see the status of my request. (Ready/Processing).
+    Ready is displayed when I have no pending requests.
+    Processing is when I am waiting for the last request to be completed.
