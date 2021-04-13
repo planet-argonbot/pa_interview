@@ -1,17 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.2', '>= 5.2.2'
-gem 'pg', '~> 0.18'
+gem 'rails', '~> 6.1', '>= 6.1.3.1'
+gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'puma', '~> 3.0'
-gem 'sass-rails', '~> 5.0', '>= 5.0.7'
+gem 'sass-rails', '~> 6.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '~> 1.3', '>= 1.3.2'
 gem 'sidekiq', '~> 5.2', '>= 5.2.5'
 gem 'react-rails', '~> 2.4', '>= 2.4.4'
-gem 'bootstrap', '~> 4.1', '>= 4.1.3'
 
 group :development, :test do
   gem 'byebug', platform: :mri
