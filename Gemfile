@@ -9,7 +9,7 @@ gem 'coffee-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '~> 1.3', '>= 1.3.2'
-gem 'sidekiq', '~> 5.2', '>= 5.2.5'
+gem 'sidekiq', '~> 6.4'
 gem 'react-rails', '~> 2.4', '>= 2.4.4'
 
 group :development, :test do
